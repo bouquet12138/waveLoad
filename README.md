@@ -2,14 +2,14 @@
 --------
 ![image](https://github.com/bouquet12138/pictureLibrary/blob/master/waveLoadNormal.gif)<br>
 		
-		布局文件<br>
+		布局文件
 		<com.example.waveloaddemo.custom_view.WaveProgressView
 				android:id="@+id/waveView"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
 				/>
 				
-		java代码<br>
+		java代码
 		ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, 0.8f);
 		valueAnimator.addUpdateListener((v) -> {
                     float value = (float) v.getAnimatedValue();
