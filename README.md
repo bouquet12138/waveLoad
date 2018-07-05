@@ -15,9 +15,9 @@
                     float value = (float) v.getAnimatedValue();
                     mWaveView.setPercent(value);//设置值
                 }
-        );
-        valueAnimator.setDuration(5000);//3000秒
-        valueAnimator.start();//开启动画
+		);
+		valueAnimator.setDuration(5000);//3000秒
+		valueAnimator.start();//开启动画
 
 加上颜色过渡
 ------------
@@ -25,7 +25,7 @@
 
 		java代码设置方法
 		mWaveView.setFirstColorList(0x99FF2727, 0x99FF8C20, 0x99FBFF27, 0x998BE93A, 0x9932D132);
-        mWaveView.setSecondColorList(0x66FF2727, 0x66FF8C20, 0x66FBFF27, 0x668BE93A, 0x6632D132);
+		mWaveView.setSecondColorList(0x66FF2727, 0x66FF8C20, 0x66FBFF27, 0x668BE93A, 0x6632D132);
 
 加上TextView
 ------------
