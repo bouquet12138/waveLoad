@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--水波view的属性-->
+    <declare-styleable name="WaveProgressView">
+
+        <attr name="firstWaveColor" format="color" /><!--第一个画笔颜色-->
+        <attr name="secondWaveColor" format="color" /><!--第二个画笔颜色-->
+        <attr name="circlePaintColor" format="color" /><!--圆的颜色-->
+        <attr name="waveWidth" format="dimension" /><!--水波宽-->
+        <attr name="waveHeight" format="dimension" /><!--水波高-->
+        <attr name="changeHeight" format="boolean" /><!--水波高度是否会根据percent改变-->
+        <attr name="viewSize" format="dimension" /><!--view的尺寸-->
+        <attr name="animPeriod" format="integer" /><!--平移动画的周期-->
+
+    </declare-styleable>
+
+</resources>
