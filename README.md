@@ -1,16 +1,17 @@
 普通样式
 --------
 ![image](https://github.com/bouquet12138/pictureLibrary/blob/master/waveLoadNormal.gif)<br>
-
+		
+		布局文件<br>
 		<com.example.waveloaddemo.custom_view.WaveProgressView
 				android:id="@+id/waveView"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
 				/>
 				
-		java代码
+		java代码<br>
 		ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, 0.8f);
-        valueAnimator.addUpdateListener((v) -> {
+		valueAnimator.addUpdateListener((v) -> {
                     float value = (float) v.getAnimatedValue();
                     mWaveView.setPercent(value);//设置值
                 }
@@ -50,9 +51,26 @@
 			
 		java代码
 		
+		ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, 0.8f);
+		valueAnimator.addUpdateListener((v) -> {
+                    float value = (float) v.getAnimatedValue();
+                    mWaveView.setPercent(value);//设置值
+
+                    value *= 100;
+                    if (value == 100 || value - mLastValue >= 0.8f) {//加上这句话是避免数据更新太快，不然闪瞎狗眼😂
+                        NumberFormat nf = NumberFormat.getNumberInstance();
+                        nf.setMaximumFractionDigits(2);//小数位最多两位
+                        nf.setMinimumFractionDigits(2);//小数位最低两位 保证后面保留两位小数 亲们可以自行更改
+                        String text = nf.format(value);
+                        mValueText.setText(text + "%");
+                        mLastValue = value;
+                    }
+                }
+        );
+		
 			
-为什么把TextView和waveProgressView分开而不是在waveProgressView里用画笔画呢，是为了更好的扩展性，高内聚低耦合了解一下，<br>
-其实是因为up懒，但这样确实扩展更好，嘿。<br>
+为什么把TextView和waveProgressView分开而不是在waveProgressView里用画笔画呢，是为了更好的扩展性，高内聚低耦合了解一下，
+其实是因为up懒，但这样确实扩展更好，嘿。
 
 		
 
